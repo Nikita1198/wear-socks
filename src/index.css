@@ -1,0 +1,11 @@
+@import url('https://fonts.cdnfonts.com/css/century-gothic-paneuropean');
+
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@config "../tailwind.config.js";
+
+body {
+  background-color: #e2ded8;
+  @apply font-sans;
+}
