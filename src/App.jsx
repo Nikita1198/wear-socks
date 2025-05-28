@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar';
 import { initFlowbite } from 'flowbite';
 import { ThemeProvider, createTheme } from 'flowbite-react';
+import HeroSection from './components/HeroSection'
 
 const customTheme = createTheme({
   button: {
@@ -23,10 +24,12 @@ function App() {
   }, []);
 
   return (
+    <>
       <ThemeProvider theme={customTheme}>
         <Navbar />
-        <div className="pt-40 container mx-auto"><p>Привет Мир</p></div>
+        <HeroSection />
       </ThemeProvider>
+    </>
   )
 }
 
