@@ -1,0 +1,19 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/
+api/
+vercel.json
+README*.md
+.vscode/
+.idea/
+# Don't exclude public directory - we need images
+#public/ 

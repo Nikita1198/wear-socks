@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-black fixed w-full z-20 top-0 start-0 border-b border-gray-200">
       <div className="container flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="https://носиноски.рф/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/logo.png" className="h-9" alt="Logo" />
         </a>
         <div className="flex items-center md:order-2 space-x-4 rtl:space-x-reverse">

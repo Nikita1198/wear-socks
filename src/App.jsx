@@ -3,6 +3,9 @@ import Navbar from './components/Navbar';
 import { initFlowbite } from 'flowbite';
 import { ThemeProvider, createTheme } from 'flowbite-react';
 import HeroSection from './components/HeroSection'
+import ProductBenefits from './components/ProductBenefits'
+import ContactForm from './components/ContactForm'
+import Footer from './components/Footer'
 
 const customTheme = createTheme({
   button: {
@@ -28,6 +31,9 @@ function App() {
       <ThemeProvider theme={customTheme}>
         <Navbar />
         <HeroSection />
+        <ProductBenefits />
+        <ContactForm />
+        <Footer />
       </ThemeProvider>
     </>
   )
