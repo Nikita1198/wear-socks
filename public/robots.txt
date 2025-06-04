@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://носиноски.рф/sitemap.xml
+
+# Запрет на индексацию служебных файлов
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.log$
+
+# Разрешаем индексацию всех изображений и документов
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.docx$
+
+# Crawl delay для вежливого сканирования
+Crawl-delay: 1 

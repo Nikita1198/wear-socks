@@ -14,13 +14,13 @@ const Navbar: React.FC = () => {
           <img src="/logo.png" className="h-9" alt="Logo" />
         </a>
         <div className="flex items-center md:order-2 space-x-4 rtl:space-x-reverse">
-          <a href="#" className="hover:opacity-80">
+          <a href="https://wa.me/79604435878" className="hover:opacity-80" target="_blank" rel="noopener noreferrer">
             <img src="/whats.png" className="h-7 w-7" alt="WhatsApp" />
           </a>
-          <a href="#" className="hover:opacity-80">
+          <a href="https://t.me/dd00shikkk" className="hover:opacity-80" target="_blank" rel="noopener noreferrer">
             <img src="/tg.png" className="h-7 w-7" alt="Telegram" />
           </a>
-          <button type="button" className="hidden md:flex text-white bg-transparent hover:bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-transparent dark:hover:bg-transparent dark:focus:ring-blue-800 border border-white">+7 (900) 222-22-22</button>
+          <a href="tel:+79604435878" className="hidden md:flex text-white bg-transparent hover:bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-transparent dark:hover:bg-transparent dark:focus:ring-blue-800 border border-white hover:border-blue-400 transition-colors">+7 (960) 443-58-78</a>
           <button 
             onClick={toggleMenu}
             type="button" 

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: telegram-api-prod
+    environment:
+      - TELEGRAM_BOT_TOKEN=7208241425:AAFSu765qB4htNGqvim6xjYEsjd3DlNuaa8
+      - TELEGRAM_CHAT_ID=-1002537750230
+      - PORT=8000
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  frontend:
+    build: .
+    container_name: react-frontend-prod
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ssl:/etc/nginx/ssl:ro
+      - ./nginx.prod.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge 
