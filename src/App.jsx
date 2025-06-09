@@ -3,7 +3,10 @@ import Navbar from './components/Navbar';
 import { initFlowbite } from 'flowbite';
 import { ThemeProvider, createTheme } from 'flowbite-react';
 import HeroSection from './components/HeroSection'
+import Gallery from './components/Gallery'
 import ProductBenefits from './components/ProductBenefits'
+import DecorativeSection from './components/DecorativeSection'
+import PricingSection from './components/PricingSection'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 
@@ -31,7 +34,10 @@ function App() {
       <ThemeProvider theme={customTheme}>
         <Navbar />
         <HeroSection />
+        <Gallery />
         <ProductBenefits />
+        <DecorativeSection />
+        <PricingSection />
         <ContactForm />
         <Footer />
       </ThemeProvider>

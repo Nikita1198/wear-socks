@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductBenefits: React.FC = () => {
   return (
-    <section className="container mx-auto mt-8 border-2 border-black py-12 px-8 rounded-3xl mx-4 relative overflow-hidden">
+    <section className="max-w-6xl my-4 border-2 border-black py-12 px-6 sm:px-8 rounded-3xl mx-4 sm:mx-auto relative overflow-hidden">
       <div className="relative">
         {/* Text content */}
         <div className="pr-40">
@@ -22,14 +22,14 @@ const ProductBenefits: React.FC = () => {
         <img 
           src="/Пнг-08.png" 
           alt="Design Icon" 
-          className="absolute top-2 right-8 w-24 h-24"
+          className="absolute top-2 right-8 w-24 h-24 opacity-50 md:opacity-100"
         />
         
         {/* Bottom right image */}
         <img 
           src="/Пнг-13.png" 
           alt="Style Icon" 
-          className="absolute top-23 right-32 w-48 h-48"
+          className="absolute top-23 right-32 w-48 h-48 opacity-50 md:opacity-100"
         />
       </div>
     </section>

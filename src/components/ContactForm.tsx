@@ -119,7 +119,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="container mx-auto mt-8 border-2 border-black py-12 px-8 rounded-3xl mx-4 relative overflow-hidden">
+    <section className="max-w-6xl mt-8 border-2 border-black py-12 px-6 sm:px-8 rounded-3xl mx-4 sm:mx-auto relative overflow-hidden">
       <div className="relative">
         {/* Title */}
         <div className="text-center mb-8">

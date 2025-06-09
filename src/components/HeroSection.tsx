@@ -3,7 +3,7 @@ import React from 'react';
 const HeroSection: React.FC = () => {
   return (
     <>
-      <section className="container mx-auto mt-26 py-4 px-0">
+      <section className="container mx-auto mt-26 py-4 px-4">
         <div className="flex flex-col md:flex-row items-center">
           {/* Text and Button Column */}
           <div className="md:w-1/2 mb-8 md:mb-0">
@@ -14,7 +14,15 @@ const HeroSection: React.FC = () => {
               Под ключ, от 100 пар.
             </p>
             <p className="text-[#00589d] mb-10 text-xl">ИЗГОТОВЛЕНИЕ ОТ 3 ДНЕЙ</p>
-            <button className="bg-[#00589d] text-white px-6 py-3 rounded-2xl text-xl font-semibold hover:bg-[#004a8a]">
+            <button 
+              onClick={() => {
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: 'smooth'
+                });
+              }}
+              className="bg-[#00589d] text-white px-6 py-3 rounded-2xl text-xl font-semibold hover:bg-[#004a8a] transition-colors duration-300"
+            >
               Заказать партию на производстве
             </button>
           </div>
@@ -23,7 +31,7 @@ const HeroSection: React.FC = () => {
           <div className="md:w-1/2 flex flex-col items-center relative p-1 -mt-[70px]">
             {/* Images Container */}
             <div className="relative w-full">
-              <img src="/under_socks.png" alt="Under Socks" className="w-1/2 h-auto mb-4 ml-auto" />
+              <img src="/under_socks.png" alt="Under Socks" className="w-1/2 h-auto mb-4 ml-auto opacity-0 md:opacity-100" />
               <img src="/main_socks.png" alt="Large Sock" className="absolute top-0 left-1/2 transform -translate-x-1/2 h-auto z-10" style={{ width: '39.125rem' }} />
               {/* Связаться с нами Image - positioned relative to Large Sock */}
               <img src="/call_me.png" alt="Связаться с нами" className="hidden lg:block 2xl:hidden w-1/2 md:w-3/5 lg:w-2/5 h-auto absolute top-22 lg:top-[-60px] right-4 lg:right-60 z-50" />
@@ -51,7 +59,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* Team Description */}
-      <section className="container mx-auto py-6 px-4">
+      <section className="container mx-auto py-6 px-4 mt-10">
         <div className="text-left">
           <p className="text-2xl md:text-3xl font-bold max-w-5xl">
             Мы – команда технологов, дизайнеров и вязальщиц,<br/>
