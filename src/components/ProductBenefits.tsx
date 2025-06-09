@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductBenefits: React.FC = () => {
   return (
-    <section className="max-w-6xl my-4 border-2 border-black py-12 px-6 sm:px-8 rounded-3xl mx-4 sm:mx-auto relative overflow-hidden">
+    <section className="container mx-auto mt-10 py-4 px-4 my-4 border-2 border-black py-12 px-6 sm:px-8 rounded-3xl mx-4 sm:mx-auto relative overflow-hidden">
       <div className="relative">
         {/* Text content */}
         <div className="pr-40">

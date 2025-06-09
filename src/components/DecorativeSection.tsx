@@ -2,7 +2,7 @@ import React from 'react';
 
 const DecorativeSection: React.FC = () => {
   return (
-    <section className="container mx-auto my-10 py-8 px-4 relative">
+    <section className="container mx-auto my-10 py-8 px-2 relative">
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Left black block */}
         <div className="lg:w-1/2 bg-black text-white p-8 rounded-3xl relative overflow-visible">
