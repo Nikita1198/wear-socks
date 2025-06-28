@@ -14,10 +14,28 @@ const Navbar: React.FC = () => {
           <img src="/logo.png" className="h-9" alt="Logo" />
         </a>
         <div className="flex items-center md:order-2 space-x-4 rtl:space-x-reverse">
-          <a href="https://wa.me/79604435878" className="hover:opacity-80" target="_blank" rel="noopener noreferrer">
+          <a 
+            href="https://wa.me/79604435878" 
+            className="hover:opacity-80" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={() => {
+              // @ts-ignore
+              window.ym && window.ym(102969541,'reachGoal','whatsapp');
+            }}
+          >
             <img src="/whats.png" className="h-7 w-7" alt="WhatsApp" />
           </a>
-          <a href="https://t.me/dd00shikkk" className="hover:opacity-80" target="_blank" rel="noopener noreferrer">
+          <a 
+            href="https://t.me/dd00shikkk" 
+            className="hover:opacity-80" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={() => {
+              // @ts-ignore
+              window.ym && window.ym(102969541,'reachGoal','telegram');
+            }}
+          >
             <img src="/tg.png" className="h-7 w-7" alt="Telegram" />
           </a>
           <a href="tel:+79604435878" className="hidden md:flex text-white bg-transparent hover:bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-transparent dark:hover:bg-transparent dark:focus:ring-blue-800 border border-white hover:border-blue-400 transition-colors">+7 (960) 443-58-78</a>
@@ -35,16 +53,16 @@ const Navbar: React.FC = () => {
         <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isOpen ? 'block' : 'hidden'}`} id="navbar-sticky">
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:space-x-8 lg:space-x-16 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black dark:bg-black md:dark:bg-black dark:border-gray-700 md:pt-1 sm:ml-[20px] md:ml-[40px] ml-[30px]">
             <li>
-              <a href="#" className="block py-1 px-2 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">О НАС</a>
+              <a href="#" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">О НАС</a>
             </li>
             <li>
-              <a href="#" className="block py-1 px-2 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">ЦЕНЫ</a>
+              <a href="#" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">ЦЕНЫ</a>
             </li>
             <li>
-              <a href="#" className="block py-1 px-2 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">НАШ АССОРТИМЕНТ</a>
+              <a href="#" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">НАШ АССОРТИМЕНТ</a>
             </li>
             <li>
-              <a href="#" className="block py-1 px-2 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">СЕРТИФИКАТЫ</a>
+              <a href="/docx/ЕАЭС RU С-RU.АД65.В.01789_25.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">СЕРТИФИКАТЫ</a>
             </li>
           </ul>
         </div>
