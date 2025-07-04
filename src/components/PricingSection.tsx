@@ -2,7 +2,7 @@ import React from 'react';
 
 const PricingSection: React.FC = () => {
   return (
-    <section className="py-16 px-4 relative overflow-hidden" style={{ backgroundColor: '#e2ded8' }}>
+    <section id="prices" className="py-16 px-4 relative overflow-hidden" style={{ backgroundColor: '#e2ded8' }}>
       {/* Декоративные элементы */}
       <div className="absolute top-0 left-0 w-64 h-32">
         <svg viewBox="0 0 200 100" className="w-full h-full text-[#00589d]">

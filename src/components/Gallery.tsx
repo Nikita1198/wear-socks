@@ -50,7 +50,7 @@ const Gallery: React.FC = () => {
   ];
 
   return (
-    <section className="container mx-auto mt-2 py-12 px-4">
+    <section id="assortment" className="container mx-auto mt-2 py-12 px-4">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           НАША <span className="text-[#00589d]">КОЛЛЕКЦИЯ</span>

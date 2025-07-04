@@ -12,6 +12,19 @@ const Navbar: React.FC = () => {
     window.ym && window.ym(103139843, 'reachGoal', eventName);
   };
 
+  const scrollToSection = (sectionId: string, eventName: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 80; // Примерная высота навбара
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navbarHeight,
+        behavior: 'smooth'
+      });
+      trackEvent(eventName);
+    }
+  };
+
   return (
     <nav className="bg-black fixed w-full z-50 top-0 start-0 border-b border-gray-200">
       <div className="container flex flex-wrap items-center justify-between mx-auto p-4">
@@ -58,13 +71,28 @@ const Navbar: React.FC = () => {
         <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isOpen ? 'block' : 'hidden'}`} id="navbar-sticky">
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:space-x-8 lg:space-x-16 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black dark:bg-black md:dark:bg-black dark:border-gray-700 md:pt-1 sm:ml-[20px] md:ml-[40px] ml-[30px]">
             <li>
-              <a href="#" onClick={() => trackEvent('about')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">О НАС</a>
+              <button 
+                onClick={() => scrollToSection('about', 'about')}
+                className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm"
+              >
+                О НАС
+              </button>
             </li>
             <li>
-              <a href="#" onClick={() => trackEvent('prices')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">ЦЕНЫ</a>
+              <button 
+                onClick={() => scrollToSection('prices', 'prices')}
+                className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm"
+              >
+                ЦЕНЫ
+              </button>
             </li>
             <li>
-              <a href="#" onClick={() => trackEvent('assortment')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">НАШ АССОРТИМЕНТ</a>
+              <button 
+                onClick={() => scrollToSection('assortment', 'assortment')}
+                className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm"
+              >
+                НАШ АССОРТИМЕНТ
+              </button>
             </li>
             <li>
               <a href="/docx/ЕАЭС RU С-RU.АД65.В.01789_25.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('certificates')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">СЕРТИФИКАТЫ</a>

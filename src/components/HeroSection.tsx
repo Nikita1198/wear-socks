@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* Team Description */}
-      <section className="container mx-auto py-6 px-4 mt-10">
+      <section id="about" className="container mx-auto py-6 px-4 mt-10">
         <div className="text-left">
           <p className="text-2xl md:text-3xl font-bold max-w-5xl">
             Мы – команда технологов, дизайнеров и вязальщиц,<br/>
