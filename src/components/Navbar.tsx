@@ -7,21 +7,15 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const trackEvent = (eventName: string) => {
-    // @ts-ignore
-    window.ym && window.ym(103139843, 'reachGoal', eventName);
-  };
-
-  const scrollToSection = (sectionId: string, eventName: string) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navbarHeight = 80; // Примерная высота навбара
+      const navbarHeight = 80;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: elementPosition - navbarHeight,
         behavior: 'smooth'
       });
-      trackEvent(eventName);
     }
   };
 
@@ -37,7 +31,6 @@ const Navbar: React.FC = () => {
             className="hover:opacity-80" 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => trackEvent('whatsapp')}
           >
             <img src="/whats.png" className="h-7 w-7" alt="WhatsApp" />
           </a>
@@ -46,14 +39,12 @@ const Navbar: React.FC = () => {
             className="hover:opacity-80" 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => trackEvent('telegram')}
           >
             <img src="/tg.png" className="h-7 w-7" alt="Telegram" />
           </a>
           <a 
             href="tel:+79604435878" 
             className="hidden md:flex text-white bg-transparent hover:bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-transparent dark:hover:bg-transparent dark:focus:ring-blue-800 border border-white hover:border-blue-400 transition-colors"
-            onClick={() => trackEvent('phone')}
           >
             +7 (960) 443-58-78
           </a>
@@ -72,7 +63,7 @@ const Navbar: React.FC = () => {
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:space-x-8 lg:space-x-16 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black dark:bg-black md:dark:bg-black dark:border-gray-700 md:pt-1 sm:ml-[20px] md:ml-[40px] ml-[30px]">
             <li>
               <button 
-                onClick={() => scrollToSection('about', 'about')}
+                onClick={() => scrollToSection('about')}
                 className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm"
               >
                 О НАС
@@ -80,7 +71,7 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <button 
-                onClick={() => scrollToSection('prices', 'prices')}
+                onClick={() => scrollToSection('prices')}
                 className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm"
               >
                 ЦЕНЫ
@@ -88,14 +79,21 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <button 
-                onClick={() => scrollToSection('assortment', 'assortment')}
+                onClick={() => scrollToSection('assortment')}
                 className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm"
               >
                 НАШ АССОРТИМЕНТ
               </button>
             </li>
             <li>
-              <a href="/docx/ЕАЭС RU С-RU.АД65.В.01789_25.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('certificates')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">СЕРТИФИКАТЫ</a>
+              <a 
+                href="/docx/ЕАЭС RU С-RU.АД65.В.01789_25.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm"
+              >
+                СЕРТИФИКАТЫ
+              </a>
             </li>
           </ul>
         </div>
