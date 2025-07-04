@@ -7,6 +7,11 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
+  const trackEvent = (eventName: string) => {
+    // @ts-ignore
+    window.ym && window.ym(103139843, 'reachGoal', eventName);
+  };
+
   return (
     <nav className="bg-black fixed w-full z-50 top-0 start-0 border-b border-gray-200">
       <div className="container flex flex-wrap items-center justify-between mx-auto p-4">
@@ -19,10 +24,7 @@ const Navbar: React.FC = () => {
             className="hover:opacity-80" 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => {
-              // @ts-ignore
-              window.ym && window.ym(102969541,'reachGoal','whatsapp');
-            }}
+            onClick={() => trackEvent('whatsapp')}
           >
             <img src="/whats.png" className="h-7 w-7" alt="WhatsApp" />
           </a>
@@ -31,14 +33,17 @@ const Navbar: React.FC = () => {
             className="hover:opacity-80" 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => {
-              // @ts-ignore
-              window.ym && window.ym(102969541,'reachGoal','telegram');
-            }}
+            onClick={() => trackEvent('telegram')}
           >
             <img src="/tg.png" className="h-7 w-7" alt="Telegram" />
           </a>
-          <a href="tel:+79604435878" className="hidden md:flex text-white bg-transparent hover:bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-transparent dark:hover:bg-transparent dark:focus:ring-blue-800 border border-white hover:border-blue-400 transition-colors">+7 (960) 443-58-78</a>
+          <a 
+            href="tel:+79604435878" 
+            className="hidden md:flex text-white bg-transparent hover:bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 text-center dark:bg-transparent dark:hover:bg-transparent dark:focus:ring-blue-800 border border-white hover:border-blue-400 transition-colors"
+            onClick={() => trackEvent('phone')}
+          >
+            +7 (960) 443-58-78
+          </a>
           <button 
             onClick={toggleMenu}
             type="button" 
@@ -53,16 +58,16 @@ const Navbar: React.FC = () => {
         <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isOpen ? 'block' : 'hidden'}`} id="navbar-sticky">
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:space-x-8 lg:space-x-16 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black dark:bg-black md:dark:bg-black dark:border-gray-700 md:pt-1 sm:ml-[20px] md:ml-[40px] ml-[30px]">
             <li>
-              <a href="#" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">О НАС</a>
+              <a href="#" onClick={() => trackEvent('about')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">О НАС</a>
             </li>
             <li>
-              <a href="#" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">ЦЕНЫ</a>
+              <a href="#" onClick={() => trackEvent('prices')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">ЦЕНЫ</a>
             </li>
             <li>
-              <a href="#" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">НАШ АССОРТИМЕНТ</a>
+              <a href="#" onClick={() => trackEvent('assortment')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">НАШ АССОРТИМЕНТ</a>
             </li>
             <li>
-              <a href="/docx/ЕАЭС RU С-RU.АД65.В.01789_25.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">СЕРТИФИКАТЫ</a>
+              <a href="/docx/ЕАЭС RU С-RU.АД65.В.01789_25.pdf" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('certificates')} className="block py-1 px-2 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-sm">СЕРТИФИКАТЫ</a>
             </li>
           </ul>
         </div>

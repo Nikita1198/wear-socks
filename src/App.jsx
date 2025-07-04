@@ -9,6 +9,7 @@ import DecorativeSection from './components/DecorativeSection'
 import PricingSection from './components/PricingSection'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
+import YandexMetrika from './components/YandexMetrika'
 
 const customTheme = createTheme({
   button: {
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <YandexMetrika />
       <ThemeProvider theme={customTheme}>
         <Navbar />
         <HeroSection />
