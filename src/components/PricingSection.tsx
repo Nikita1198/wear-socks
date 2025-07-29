@@ -37,7 +37,6 @@ const PricingSection: React.FC = () => {
           </div>
           <div className="bg-red-600 text-white px-6 py-3 rounded-2xl text-center">
             <div className="text-sm font-bold">ДОСТАВКА ПО РФ</div>
-            <div className="text-lg font-bold">БЕСПЛАТНО</div>
           </div>
         </div>
 
